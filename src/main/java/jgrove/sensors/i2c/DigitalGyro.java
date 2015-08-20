@@ -1,4 +1,4 @@
-package com.github.jbman.jgrove.sensors.i2c;
+package jgrove.sensors.i2c;
 
 import java.io.IOException;
 import java.util.ArrayList;

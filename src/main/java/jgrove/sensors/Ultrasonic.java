@@ -1,9 +1,9 @@
-package com.github.jbman.jgrove.sensors;
+package jgrove.sensors;
 
 import java.io.IOException;
 
-import com.github.jbman.jgrove.GrovePi;
-import com.github.jbman.jgrove.I2cPin;
+import jgrove.GrovePi;
+import jgrove.I2cPin;
 
 public class Ultrasonic {
 

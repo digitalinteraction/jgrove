@@ -1,4 +1,4 @@
-package com.github.jbman.jgrove;
+package jgrove;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

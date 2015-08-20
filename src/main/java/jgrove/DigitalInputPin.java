@@ -1,8 +1,8 @@
-package com.github.jbman.jgrove;
+package jgrove;
 
 import java.io.IOException;
 
-import com.github.jbman.jgrove.GrovePi.Pin;
+import jgrove.GrovePi.Pin;
 
 /**
  * A pin on the GrovePi board which will be used for reading digital values

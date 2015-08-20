@@ -1,4 +1,4 @@
-package com.github.jbman.jgrove.command;
+package jgrove.command;
 
 import java.io.IOException;
 import java.util.function.Predicate;

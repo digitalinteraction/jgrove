@@ -1,8 +1,8 @@
-package com.github.jbman.jgrove.sensors;
+package jgrove.sensors;
 
 import java.io.IOException;
 
-import com.github.jbman.jgrove.DigitalOutputPin;
+import jgrove.DigitalOutputPin;
 
 /**
  * A switcher which returns "on" when device returns 0 "off" when device returns

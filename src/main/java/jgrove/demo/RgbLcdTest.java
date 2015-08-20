@@ -1,9 +1,9 @@
-package com.github.jbman.jgrove.demo;
+package jgrove.demo;
 
 import java.io.IOException;
 
-import com.github.jbman.jgrove.GrovePi;
-import com.github.jbman.jgrove.sensors.i2c.RgbLcd;
+import jgrove.GrovePi;
+import jgrove.sensors.i2c.RgbLcd;
 
 public class RgbLcdTest {
 

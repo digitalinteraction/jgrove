@@ -1,9 +1,9 @@
-package com.github.jbman.jgrove.sensors;
+package jgrove.sensors;
 
 import java.io.IOException;
 
-import com.github.jbman.jgrove.DigitalOutputPin;
-import com.github.jbman.jgrove.GrovePi;
+import jgrove.DigitalOutputPin;
+import jgrove.GrovePi;
 
 public class Switcher {
 

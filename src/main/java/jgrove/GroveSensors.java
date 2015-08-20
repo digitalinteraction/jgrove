@@ -1,11 +1,11 @@
-package com.github.jbman.jgrove;
+package jgrove;
 
 import java.io.IOException;
 
-import com.github.jbman.jgrove.sensors.Button;
-import com.github.jbman.jgrove.sensors.Switcher;
-import com.github.jbman.jgrove.sensors.SwitcherInverse;
-import com.github.jbman.jgrove.sensors.Ultrasonic;
+import jgrove.sensors.Button;
+import jgrove.sensors.Switcher;
+import jgrove.sensors.SwitcherInverse;
+import jgrove.sensors.Ultrasonic;
 
 public class GroveSensors {
 
