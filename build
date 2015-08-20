@@ -1,1 +1,1 @@
-pi@culturepi01 ~/jgrove $ javac -cp ./build:/opt/pi4j/lib/'*' -sourcepath src/java -d classes src/jgrove/Demo.java
+javac -cp ./build:/opt/pi4j/lib/'*' -sourcepath src/java -d classes src/jgrove/demo/ButtonTest.java
