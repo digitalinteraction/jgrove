@@ -1,1 +1,0 @@
-javac -cp ./build:/opt/pi4j/lib/'*' -sourcepath src/java -d classes src/jgrove/demo/ButtonTest.java
