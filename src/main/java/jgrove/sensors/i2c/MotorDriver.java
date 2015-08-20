@@ -22,10 +22,10 @@ public class MotorDriver {
 	private static final byte UnenableStepper = (byte) 0x1b;
 	private static final byte Stepernu = (byte) 0x1c;
 
-	public static final byte DIRECTION_FWD_BOTH = 0b1010;
-	public static final byte DIRECTION_FWD_BWD = 0b1001;
-	public static final byte DIRECTION_BWD_BOTH = 0b0101;
-	public static final byte DIRECTION_BWD_FWD = 0b0110;
+	public static final byte DIRECTION_FWD_BOTH = 0x0a;	//0b1010;
+	public static final byte DIRECTION_FWD_BWD = 0x09;	//0b1001;
+	public static final byte DIRECTION_BWD_BOTH = 0x05;	//0b0101;
+	public static final byte DIRECTION_BWD_FWD = 0x06;	//0b0110;
 
 	public static void main(String[] args) throws IOException {
 		MotorDriver motorDriver = new MotorDriver();
