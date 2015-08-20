@@ -1,4 +1,3 @@
-﻿
 package grovepi.sensors;
 
 import grovepi.GrovePi;

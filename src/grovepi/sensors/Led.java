@@ -1,4 +1,4 @@
-﻿package grovepi.sensors;
+package grovepi.sensors;
 
 import grovepi.GrovePi;
 import grovepi.PinMode;

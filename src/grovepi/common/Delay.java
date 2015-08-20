@@ -1,4 +1,4 @@
-﻿package grovepi.common;
+package grovepi.common;
 
 public class Delay {
 	

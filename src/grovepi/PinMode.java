@@ -1,4 +1,4 @@
-﻿package grovepi;
+package grovepi;
 
 /*
 public class PinMode

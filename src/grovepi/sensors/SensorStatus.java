@@ -1,4 +1,4 @@
-﻿package grovepi.sensors;
+package grovepi.sensors;
 
 /*
 public enum SensorStatus
