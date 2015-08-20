@@ -13,14 +13,14 @@ public class MotorDriver {
 	private static final int MOTOR_DRIVER_ADDR = 0x0f;
 
 	private static final byte MotorSpeedSet = (byte) 0x82;
-	private static final byte PWMFrequenceSet = (byte) 0x84;
+	//private static final byte PWMFrequenceSet = (byte) 0x84;
 	private static final byte DirectionSet = (byte) 0xaa;
-	private static final byte MotorSetA = (byte) 0xa1;
-	private static final byte MotorSetB = (byte) 0xa5;
+	//private static final byte MotorSetA = (byte) 0xa1;
+	//private static final byte MotorSetB = (byte) 0xa5;
 	private static final byte Nothing = (byte) 0x01;
-	private static final byte EnableStepper = (byte) 0x1a;
-	private static final byte UnenableStepper = (byte) 0x1b;
-	private static final byte Stepernu = (byte) 0x1c;
+	//private static final byte EnableStepper = (byte) 0x1a;
+	//private static final byte UnenableStepper = (byte) 0x1b;
+	//private static final byte Stepernu = (byte) 0x1c;
 
 	public static final byte DIRECTION_FWD_BOTH = 0x0a;	//0b1010;
 	public static final byte DIRECTION_FWD_BWD = 0x09;	//0b1001;

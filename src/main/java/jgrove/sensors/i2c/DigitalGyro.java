@@ -70,8 +70,8 @@ public class DigitalGyro {
 	private static final byte WHO_AM_I = (byte) 0x00;
 	private static final byte GYRO_SAMPLE_RATE_DEVIDER = (byte) 0x15;
 	private static final byte GYRO_DLPF = (byte) 0x16;
-	private static final byte ITG3200_byte_C = (byte) 0x17;
-	private static final byte ITG3200_byte_S = (byte) 0x1A;
+	//private static final byte ITG3200_byte_C = (byte) 0x17;
+	//private static final byte ITG3200_byte_S = (byte) 0x1A;
 	private static final byte TEMP_OUT_H = (byte) 0x1B;
 	private static final byte TEMP_OUT_L = (byte) 0x1C;
 	private static final byte ITG3200_GX_H = (byte) 0x1D;
@@ -80,7 +80,7 @@ public class DigitalGyro {
 	private static final byte ITG3200_GY_L = (byte) 0x20;
 	private static final byte ITG3200_GZ_H = (byte) 0x21;
 	private static final byte ITG3200_GZ_L = (byte) 0x22;
-	private static final byte ITG3200_PWR_M = (byte) 0x3E;
+	//private static final byte ITG3200_PWR_M = (byte) 0x3E;
 
 	private final I2CDevice device;
 
