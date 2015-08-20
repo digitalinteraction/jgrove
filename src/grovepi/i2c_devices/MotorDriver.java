@@ -1,4 +1,4 @@
-package jgrove.sensors.i2c;
+package grovepi.i2c_devices;
 
 import java.io.IOException;
 
@@ -6,6 +6,9 @@ import com.pi4j.io.i2c.I2CBus;
 import com.pi4j.io.i2c.I2CDevice;
 import com.pi4j.io.i2c.I2CFactory;
 
+/**
+ * @author Johannes Bergmann
+ */
 public class MotorDriver {
 
 	private static final int STEP_SLEEP = 100;

@@ -1,4 +1,4 @@
-package jgrove.sensors.i2c;
+package grovepi.i2c_devices;
 
 import java.io.IOException;
 import java.util.ArrayList;

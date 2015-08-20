@@ -22,7 +22,7 @@
     <delete file="${dist}/lib/${project}.jar"/>
     <delete file="${dist}/MANIFEST.MF"/>
     <manifest file="${dist}/MANIFEST.MF">
-       <attribute name="Main-Class" value="jgrove.demo.ButtonTest"/>
+       <attribute name="Main-Class" value="grovepi.demo.ButtonTest"/>
     </manifest>
     <jar jarfile="${dist}/lib/${project}.jar" basedir="${build}" includes="**/*.class" manifest="${dist}/MANIFEST.MF" />
   </target>

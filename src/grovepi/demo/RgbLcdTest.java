@@ -1,10 +1,13 @@
-package jgrove.demo;
+package grovepi.demo;
 
 import java.io.IOException;
 
-import jgrove.GrovePi;
-import jgrove.sensors.i2c.RgbLcd;
+import grovepi.common.Delay;
+import grovepi.i2c_devices.RgbLcd;
 
+/**
+ * @author Johannes Bergmann
+ */
 public class RgbLcdTest {
 
 	public static void main(String[] args) throws IOException {
@@ -50,18 +53,18 @@ public class RgbLcdTest {
 		System.out.println("Sending text: " + text);
 		lcd.setText(text);
 		lcd.setColor(red, green, blue);
-		GrovePi.sleep(1000);
+		Delay.milliseconds(1000);
 	}
 
 	public void testDisplayOnOff() throws IOException {
 		lcd.setText("Display on/off");
-		GrovePi.sleep(500);
+		Delay.milliseconds(500);
 		lcd.setColor(100, 100, 100);
-		GrovePi.sleep(1000);
+		Delay.milliseconds(1000);
 		lcd.display(false);
-		GrovePi.sleep(1000);
+		Delay.milliseconds(1000);
 		lcd.display(true);
-		GrovePi.sleep(1000);
+		Delay.milliseconds(1000);
 	}
 
 	public void testMove() throws IOException {
@@ -69,44 +72,44 @@ public class RgbLcdTest {
 		lcd.setText(text);
 		for (int i = 0; i < 16; i++) {
 			lcd.moveLeft();
-			GrovePi.sleep(100);
+			Delay.milliseconds(100);
 		}
 		for (int i = 0; i < 16; i++) {
 			lcd.moveRight();
-			GrovePi.sleep(100);
+			Delay.milliseconds(100);
 		}
 	}
 
 	public void testCursor() throws IOException {
 		lcd.setText("Cursor on\n");
 		lcd.cursor(true);
-		GrovePi.sleep(1000);
+		Delay.milliseconds(1000);
 		lcd.setText("Blinking Cursor\n");
 		lcd.cursorBlink(true);
-		GrovePi.sleep(1000);
+		Delay.milliseconds(1000);
 		lcd.setText("Blinking off\n");
 		lcd.cursorBlink(false);
-		GrovePi.sleep(1000);
+		Delay.milliseconds(1000);
 		lcd.setText("Cursor off\n");
 		lcd.cursor(false);
-		GrovePi.sleep(1000);
+		Delay.milliseconds(1000);
 	}
 
 	public void testColors() throws IOException {
 		lcd.setText("Red");
 		for (int color = 0; color <= 255; color++) {
 			lcd.setColor(color, 0, 0);
-			GrovePi.sleep(5);
+			Delay.milliseconds(5);
 		}
 		lcd.setText("Green");
 		for (int color = 0; color <= 255; color++) {
 			lcd.setColor(0, color, 0);
-			GrovePi.sleep(5);
+			Delay.milliseconds(5);
 		}
 		lcd.setText("Blue");
 		for (int color = 0; color <= 255; color++) {
 			lcd.setColor(0, 0, color);
-			GrovePi.sleep(5);
+			Delay.milliseconds(5);
 		}
 	}
 
