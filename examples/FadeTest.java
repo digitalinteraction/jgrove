@@ -28,7 +28,6 @@ public class FadeTest {
 		for(;;) {
 			int value = rotary.getValue();
 			float outputValue = value / 1024.0f;
-			
             System.out.println("" + value + " => " + outputValue + "");
 
 			led.setState(outputValue);
