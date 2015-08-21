@@ -1,6 +1,7 @@
 import grovepi.GrovePi;
 import grovepi.Pin;
 import grovepi.sensors.Led;
+import grovepi.common.Delay;
 
 /**
  * @author Dan Jackson, Newcastle University, 2015.
@@ -12,9 +13,9 @@ public class LedTest {
 		Led led = grovePi.getDeviceFactory().createLed(Pin.DIGITAL_PIN_3);
 		for(;;) {
 			led.setState(true);
-			grovepi.common.Delay(250);
+			Delay.milliseconds(250);
 			led.setState(false);
-			grovepi.common.Delay(250);
+			Delay.milliseconds(250);
 		}
 	}
 

@@ -24,11 +24,13 @@
   <target name="dist" depends="compile" description="Generate the distribution.">
     <mkdir dir="${dist}/lib"/>
     <delete file="${dist}/lib/${project}.jar"/>
-    <delete file="${dist}/MANIFEST.MF"/>
-    <manifest file="${dist}/MANIFEST.MF">
-       <attribute name="Main-Class" value="grovepi.demo.ButtonTest"/>
-    </manifest>
-    <jar jarfile="${dist}/lib/${project}.jar" basedir="${build}" includes="**/*.class" manifest="${dist}/MANIFEST.MF" />
+    <jar jarfile="${dist}/lib/${project}.jar" basedir="${build}" includes="**/*.class">
+      <zipgroupfileset dir="lib" includes="pi4j-core-0.0.5.jar" />
+      <manifest>
+        <attribute name="DependencyFinder" value="main" />
+        <attribute name="Main-Class" value="grovepi.sensors.ButtonSensor" />
+      </manifest>
+    </jar>
   </target>
 
   <target name="clean" description="Clean up">
