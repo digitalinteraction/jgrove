@@ -26,19 +26,18 @@ public class ButtonTest {
 	}
 	
 	public void run() {
-		for (int cycle = 0; ; cycle++) {
+		for(;;) {
 			boolean buttonPressed = button.isPressed();
 			
 			if (buttonPressed) {
-                                System.out.println("PRESSED");
-                        } else {
-                                System.out.println("RELEASED");
-                        }
+                System.out.println("PRESSED");
+	        } else {
+                System.out.println("RELEASED");
+	        }
 
 			boolean ledLit = buttonPressed;
 			led.setState(ledLit);
 		}
-		
 	}
 
 }
