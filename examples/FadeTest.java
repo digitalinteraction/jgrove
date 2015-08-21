@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 import grovepi.GrovePi;
 import grovepi.Pin;
 import grovepi.sensors.Led;
@@ -10,7 +8,7 @@ import grovepi.sensors.RotaryAngleSensor;
  */
 public class FadeTest {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		final FadeTest test = new FadeTest();
 		test.run();
 	}
