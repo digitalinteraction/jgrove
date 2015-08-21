@@ -2,6 +2,7 @@ package grovepi;
 
 import grovepi.i2c_devices.RgbLcdDisplay;
 import grovepi.sensors.AccelerometerSensor;
+import grovepi.sensors.AccelerometerSensorADXL335;
 import grovepi.sensors.ButtonSensor;
 import grovepi.sensors.Buzzer;
 import grovepi.sensors.Led;
@@ -40,6 +41,10 @@ public class GroveDeviceFactory {
     public AccelerometerSensor createAccelerometerSensor(int pin) {
     	return new AccelerometerSensor(device, pin);
 	}
+    
+    public AccelerometerSensorADXL335 createAccelerometerSensorADXL335(int pin) {
+    	return new AccelerometerSensorADXL335(device);
+    }
     
     //public RealTimeClock createRealTimeClock(int pin);
     //public LedBar createBuildLedBar(int pin);
