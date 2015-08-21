@@ -57,16 +57,14 @@ public class GrovePi {
     {
         byte[] buffer = new byte[] { (byte)Command.DIGITAL_READ, (byte)pin, Constants.UNUSED, Constants.UNUSED};
         getDirectAccess().write(buffer);
-Delay.milliseconds(100);	// C# version doesn't do this
+Delay.milliseconds(20);	// 100 // C# version doesn't do this
         int value = getDirectAccess().read();
-	System.out.print("<pin-" + pin + "<=" + value + ">");
-	return value;
+        return value;
     }
 
     public void digitalWrite(int pin, int value)
     {
     	byte[] buffer = new byte[] { (byte)Command.DIGITAL_WRITE, (byte)pin, (byte)value, Constants.UNUSED};
-System.out.print("<pin-" + pin + "=>" + value + ">");
     	getDirectAccess().write(buffer);
     }
 
@@ -74,9 +72,9 @@ System.out.print("<pin-" + pin + "=>" + value + ">");
     {
     	byte[] buffer = new byte[] { (byte)Command.ANALOG_READ, (byte)pin, Constants.UNUSED, Constants.UNUSED};
     	getDirectAccess().write(buffer);
-Delay.milliseconds(100);	// C# version doesn't do this
+Delay.milliseconds(20);	// 100 // C# version doesn't do this
         getDirectAccess().read(buffer);
-        return Byte.toUnsignedInt(buffer[1])*256 + (int)buffer[2];
+        return Byte.toUnsignedInt(buffer[1])*256 + Byte.toUnsignedInt(buffer[2]);
     }
 
     public void analogWrite(int pin, int value)
@@ -89,7 +87,6 @@ Delay.milliseconds(100);	// C# version doesn't do this
     {
     	byte[] buffer = new byte[] {(byte)Command.PIN_MODE, (byte)pin, (byte)mode.getValue(), Constants.UNUSED};
     	getDirectAccess().write(buffer);
-System.out.println("DEBUG: Mode for pin " + pin + " = " + mode + " (" + mode.getValue() + ").");
     }
 	
 }
