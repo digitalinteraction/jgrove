@@ -11,7 +11,7 @@ public class ButtonSensor extends Sensor {
 
 	// [dgj] Added
 	public boolean isPressed() {
-		return getState() == SensorStatus.ON;
+		return getState();
 	}
 	
 }
