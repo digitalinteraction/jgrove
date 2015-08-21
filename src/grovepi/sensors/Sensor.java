@@ -20,7 +20,6 @@ public abstract class Sensor
 
     public void setState(float newState) {
     	int value = (int)(255 * newState + 0.5);
-System.out.println("pin-" + pin + "=" + value);
         device.analogWrite(pin, value);
     }
     

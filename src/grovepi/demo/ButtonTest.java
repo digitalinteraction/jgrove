@@ -20,8 +20,8 @@ public class ButtonTest {
 
 	private ButtonTest() {
 		grovePi = new GrovePi();
-		button = grovePi.getDeviceFactory().createButtonSensor(Pin.DIGITAL_PIN_3);
-		led = grovePi.getDeviceFactory().createLed(Pin.DIGITAL_PIN_2);
+		button = grovePi.getDeviceFactory().createButtonSensor(Pin.DIGITAL_PIN_4);
+		led = grovePi.getDeviceFactory().createLed(Pin.DIGITAL_PIN_3);
 		run();
 	}
 	

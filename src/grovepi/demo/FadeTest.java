@@ -21,7 +21,7 @@ public class FadeTest {
 	private FadeTest() {
 		grovePi = new GrovePi();
 		rotary = grovePi.getDeviceFactory().createRotaryAngleSensor(Pin.ANALOG_PIN_0);
-		led = grovePi.getDeviceFactory().createLed(Pin.DIGITAL_PIN_2);
+		led = grovePi.getDeviceFactory().createLed(Pin.DIGITAL_PIN_3);
 		run();
 	}
 	
