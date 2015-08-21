@@ -72,7 +72,7 @@ System.out.print("<pin-" + pin + "=>" + value + ">");
 
     public int analogRead(int pin)
     {
-    	byte[] buffer = new byte[] { (byte)Command.ANALOG_READ, (byte)pin, Constants.UNUSED, Constants.UNUSED, Constants.UNUSED};
+    	byte[] buffer = new byte[] { (byte)Command.ANALOG_READ, (byte)pin, Constants.UNUSED, Constants.UNUSED};
     	getDirectAccess().write(buffer);
 Delay.milliseconds(100);	// C# version doesn't do this
         getDirectAccess().read(buffer);
