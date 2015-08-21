@@ -26,15 +26,17 @@ public class ButtonTest {
 	}
 	
 	public void run() {
-		for (;;) {
+		for (int cycle = 0; ; cycle++) {
 			boolean buttonPressed = button.isPressed();
+			
 			if (buttonPressed) {
-				System.out.println("PRESSED");
-				led.setState(true);
-			} else {
-				System.out.println("RELEASED");
-				led.setState(false);
-			}
+                                System.out.println("PRESSED");
+                        } else {
+                                System.out.println("RELEASED");
+                        }
+
+			boolean ledLit = buttonPressed;
+			led.setState(ledLit);
 		}
 		
 	}
