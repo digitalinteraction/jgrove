@@ -59,13 +59,33 @@ public class GrovePiI2CDevice
 		}
 	}
 	
+	public int read() {
+		final int maxRetries = 5;
+		for (int retries = 0; ; retries++) {
+			try {
+				return device.read();
+			} catch (IOException e) {
+				System.err.print("<I2C-Read-Error-" + (retries + 1) + ">");
+				if (retries >= maxRetries) {
+					throw new RuntimeException(e);
+				}
+			}
+		}
+	}
 	
 	public void read(byte[] buffer) {
-	   try{
-		   device.read(1, buffer, 0, buffer.length);
-	   } catch (IOException e) {
-		   throw new RuntimeException(e);
-	   }
+		final int maxRetries = 5;
+		for (int retries = 0; ; retries++) {
+			try {
+				device.read(1, buffer, 0, buffer.length);
+				return;
+			} catch (IOException e) {
+				System.err.print("<I2C-Read-Error-" + (retries + 1) + ">");
+				if (retries >= maxRetries) {
+					throw new RuntimeException(e);
+				}
+			}
+		}
 	}
 	
 	public void write(byte[] buffer) {

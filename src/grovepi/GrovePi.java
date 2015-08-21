@@ -2,6 +2,8 @@ package grovepi;
 
 import java.io.IOException;
 
+import grovepi.common.Delay;
+
 
 /**
  * GrovePi+ board.
@@ -55,29 +57,28 @@ public class GrovePi {
     {
         byte[] buffer = new byte[] { (byte)Command.DIGITAL_READ, (byte)pin, Constants.UNUSED, Constants.UNUSED};
         getDirectAccess().write(buffer);
-
-        byte[] readBuffer = new byte[1];
-        getDirectAccess().read(readBuffer);
-        return (int)readBuffer[0];
+//Delay.milliseconds(100);	// C# version doesn't do this
+        return getDirectAccess().read();
     }
 
-    public void digitalWrite(int pin, byte value)
+    public void digitalWrite(int pin, int value)
     {
-    	byte[] buffer = new byte[] { (byte)Command.DIGITAL_WRITE, (byte)pin, value, Constants.UNUSED};
+    	byte[] buffer = new byte[] { (byte)Command.DIGITAL_WRITE, (byte)pin, (byte)value, Constants.UNUSED};
     	getDirectAccess().write(buffer);
     }
 
     public int analogRead(int pin)
     {
-    	byte[] buffer = new byte[] { (byte)Command.DIGITAL_READ, (byte)Command.ANALOG_READ, (byte)pin, Constants.UNUSED, Constants.UNUSED};
+    	byte[] buffer = new byte[] { (byte)Command.ANALOG_READ, (byte)pin, Constants.UNUSED, Constants.UNUSED, Constants.UNUSED};
     	getDirectAccess().write(buffer);
+//Delay.milliseconds(100);	// C# version doesn't do this
         getDirectAccess().read(buffer);
         return Byte.toUnsignedInt(buffer[1])*256 + (int)buffer[2];
     }
 
-    public void analogWrite(int pin, byte value)
+    public void analogWrite(int pin, int value)
     {
-    	byte[] buffer = new byte[] {(byte)Command.ANALOG_WRITE, (byte)pin, value, Constants.UNUSED};
+    	byte[] buffer = new byte[] {(byte)Command.ANALOG_WRITE, (byte)pin, (byte)value, Constants.UNUSED};
     	getDirectAccess().write(buffer);
     }
 
