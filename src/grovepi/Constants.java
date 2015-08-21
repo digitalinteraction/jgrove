@@ -1,5 +1,6 @@
 package grovepi;
 
+/** @author Dan Jackson, Newcastle University, 2015. */
 public class Constants
 {
 	public static final int UNUSED = 0;

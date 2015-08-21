@@ -1,5 +1,6 @@
 package grovepi;
 
+/** @author Dan Jackson, Newcastle University, 2015. */
 public class Pin
 {
 	public static final int ANALOG_PIN_0 = 0;	// (same as D14?) 

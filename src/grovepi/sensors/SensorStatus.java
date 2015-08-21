@@ -1,5 +1,7 @@
 package grovepi.sensors;
 
+/** @author Dan Jackson, Newcastle University, 2015. */
+
 /*
 public enum SensorStatus
 {

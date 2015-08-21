@@ -3,6 +3,7 @@ package grovepi.sensors;
 import grovepi.Constants;
 import grovepi.GrovePi;
 
+/** @author Dan Jackson, Newcastle University, 2015. Originally based on code by Johannes Bergmann, and C# code by Jonathan Robson. */
 public class UltrasonicRangerSensor {
 
     private static final int COMMAND_ADDRESS = 7;

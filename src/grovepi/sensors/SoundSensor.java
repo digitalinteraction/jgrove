@@ -4,6 +4,7 @@ import grovepi.Constants;
 import grovepi.GrovePi;
 import grovepi.PinMode;
 
+/** @author Dan Jackson, Newcastle University, 2015. Derived from C# code by Jonathan Robson. */
 public class SoundSensor
 {
     protected final GrovePi device;

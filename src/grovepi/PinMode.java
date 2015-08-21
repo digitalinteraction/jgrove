@@ -1,5 +1,7 @@
 package grovepi;
 
+/** @author Dan Jackson, Newcastle University, 2015. */
+
 /*
 public class PinMode
 {

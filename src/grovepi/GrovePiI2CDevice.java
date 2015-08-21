@@ -11,7 +11,7 @@ import com.pi4j.io.i2c.I2CFactory;
  * 
  * Retries I2C writes, and RuntimeException instead of checked IOException.
  * 
- * @author Dan Jackson
+ * @author Dan Jackson, Newcastle University, 2015.
  */
 public class GrovePiI2CDevice
 {

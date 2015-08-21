@@ -3,6 +3,7 @@ package grovepi.sensors;
 import grovepi.GrovePi;
 import grovepi.PinMode;
 
+/** @author Dan Jackson, Newcastle University, 2015. Based on the C# code by Jonathan Robson. */
 public class TemperatureAndHumiditySensor
 {
 	public static class Model {

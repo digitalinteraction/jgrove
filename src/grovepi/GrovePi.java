@@ -8,7 +8,8 @@ import grovepi.common.Delay;
 /**
  * GrovePi+ board.
  * 
- * @author Dan Jackson (originally based on code by Johannes Bergmann, but rewritten following C# implementation)
+ * @author Dan Jackson, Newcastle University, 2015.
+ * (originally based on code by Johannes Bergmann, but rewritten to be more like the C# implementation)
  */
 public class GrovePi {
 	

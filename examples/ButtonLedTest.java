@@ -1,15 +1,14 @@
-package grovepi.demo;
-
-import java.io.IOException;
-
 import grovepi.GrovePi;
 import grovepi.Pin;
 import grovepi.sensors.ButtonSensor;
 import grovepi.sensors.Led;
 
-public class ButtonTest {
+/**
+ * @author Dan Jackson, Newcastle University, 2015.
+ */
+public class ButtonLedTest {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		final ButtonTest test = new ButtonTest();
 		test.run();
 	}

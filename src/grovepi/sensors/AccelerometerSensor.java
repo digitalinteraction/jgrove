@@ -3,6 +3,7 @@ package grovepi.sensors;
 import grovepi.Constants;
 import grovepi.GrovePi;
 
+/** @author Dan Jackson, Newcastle University, 2015. Derived from C# code by Jonathan Robson. */
 public class AccelerometerSensor {
 	
     private static final int COMMAND_ADDRESS = 20;
@@ -20,7 +21,6 @@ public class AccelerometerSensor {
         device.getDirectAccess().write(buffer);
 
 // TODO: C# version looks wrong here, need to look into this and fix.
-        
         byte[] readBuffer = new byte[4];
         device.getDirectAccess().read(readBuffer);
         

@@ -1,16 +1,12 @@
-package grovepi.demo;
-
-import java.io.IOException;
-
-import grovepi.common.Delay;
 import grovepi.i2c_devices.RgbLcd;
+import grovepi.common.Delay;
 
 /**
  * @author Johannes Bergmann
  */
 public class RgbLcdTest {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		final RgbLcdTest test = new RgbLcdTest();
 		if (args.length > 0) {
 			test.testGreeting(args);
@@ -21,11 +17,11 @@ public class RgbLcdTest {
 
 	private final RgbLcd lcd;
 
-	private RgbLcdTest() throws IOException {
+	private RgbLcdTest() {
 		lcd = new RgbLcd();
 	}
 
-	public void run() throws IOException {
+	public void run() {
 		testGreeting(new String[0]);
 		testDisplayOnOff();
 		testMove();
@@ -34,7 +30,7 @@ public class RgbLcdTest {
 		lcd.shutdown();
 	}
 
-	public void testGreeting(String[] args) throws IOException {
+	public void testGreeting(String[] args) {
 		String text = "Hello\nGrovePi";
 		int red = 0;
 		int green = 255;
@@ -56,7 +52,7 @@ public class RgbLcdTest {
 		Delay.milliseconds(1000);
 	}
 
-	public void testDisplayOnOff() throws IOException {
+	public void testDisplayOnOff() {
 		lcd.setText("Display on/off");
 		Delay.milliseconds(500);
 		lcd.setColor(100, 100, 100);
@@ -67,7 +63,7 @@ public class RgbLcdTest {
 		Delay.milliseconds(1000);
 	}
 
-	public void testMove() throws IOException {
+	public void testMove() {
 		final String text = "A long, long text which is scrolled left and right...";
 		lcd.setText(text);
 		for (int i = 0; i < 16; i++) {
@@ -80,7 +76,7 @@ public class RgbLcdTest {
 		}
 	}
 
-	public void testCursor() throws IOException {
+	public void testCursor() {
 		lcd.setText("Cursor on\n");
 		lcd.cursor(true);
 		Delay.milliseconds(1000);
@@ -95,7 +91,7 @@ public class RgbLcdTest {
 		Delay.milliseconds(1000);
 	}
 
-	public void testColors() throws IOException {
+	public void testColors() {
 		lcd.setText("Red");
 		for (int color = 0; color <= 255; color++) {
 			lcd.setColor(color, 0, 0);

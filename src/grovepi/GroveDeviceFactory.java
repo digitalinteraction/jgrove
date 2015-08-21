@@ -1,5 +1,6 @@
 package grovepi;
 
+import grovepi.i2c_devices.RgbLcdDisplay;
 import grovepi.sensors.AccelerometerSensor;
 import grovepi.sensors.ButtonSensor;
 import grovepi.sensors.Buzzer;
@@ -11,6 +12,7 @@ import grovepi.sensors.SoundSensor;
 import grovepi.sensors.TemperatureAndHumiditySensor;
 import grovepi.sensors.UltrasonicRangerSensor;
 
+/** @author Dan Jackson, Newcastle University, 2015. */
 public class GroveDeviceFactory {
 
 	protected final GrovePi device;
@@ -64,8 +66,13 @@ public class GroveDeviceFactory {
     	return new ButtonSensor(device, pin);
     }
     
-    //public RgbLcdDisplay createRgbLcdDisplay();
-    //public RgbLcdDisplay createRgbLcdDisplay(int rgbAddress, int textAddress);
+    public RgbLcdDisplay createRgbLcdDisplay() {
+    	return new RgbLcdDisplay();
+	}
+    
+    public RgbLcdDisplay createRgbLcdDisplay(int rgbAddress, int textAddress) {
+    	return new RgbLcdDisplay(rgbAddress, textAddress);
+    }
 	
 }
 

@@ -172,9 +172,9 @@ public class DigitalGyro {
 	}
 
 	/**
-	 * Reads the temperature from the sensor and returns the value in Â°C * 100.
+	 * Reads the temperature from the sensor and returns the value in °C * 100.
 	 * 
-	 * @return temperature in Â°C * 100
+	 * @return temperature in °C * 100
 	 * @throws IOException
 	 */
 	public int getTemperature() throws IOException {
