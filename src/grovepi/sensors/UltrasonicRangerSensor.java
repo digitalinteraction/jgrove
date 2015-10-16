@@ -19,7 +19,7 @@ public class UltrasonicRangerSensor {
     public int getDistance() {
         byte[] buffer = new byte[] {COMMAND_ADDRESS, (byte)pin, Constants.UNUSED, Constants.UNUSED};
         device.getDirectAccess().write(buffer);
-jgrove.common.Delay.milliseconds(200);	// C# version doesn't do this
+grovepi.common.Delay.milliseconds(200);	// C# version doesn't do this
         device.getDirectAccess().read(buffer);
         return ((buffer[1] & 0xFF) << 8) + (buffer[2] & 0xFF);
     }	
