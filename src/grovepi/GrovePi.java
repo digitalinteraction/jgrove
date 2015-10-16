@@ -13,8 +13,7 @@ import grovepi.common.Delay;
  */
 public class GrovePi {
 	
-    private static class Command
-    {
+    static class Command {
 		public static final byte DIGITAL_READ = 1;
 		public static final byte DIGITAL_WRITE = 2;
 		public static final byte ANALOG_READ = 3;
@@ -27,7 +26,7 @@ public class GrovePi {
 	public GrovePiI2CDevice getDirectAccess() { return device; }    
 	
 	public GrovePi() {
-		this(GrovePiI2CDevice.getInstanceRuntimeExecption());
+		this(GrovePiI2CDevice.createInstanceRuntimeExecption());
 	}
     
 	public GrovePi(GrovePiI2CDevice device) {

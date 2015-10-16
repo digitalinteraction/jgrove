@@ -29,12 +29,16 @@ public class GroveDeviceFactory {
     public Led createLed(int pin) {
     	return new Led(device, pin);
     }
-    
+
+    public TemperatureAndHumiditySensor createTemperatureAndHumiditySensor(int pin) {
+        return new TemperatureAndHumiditySensor(device, pin);
+    }
+
     public TemperatureAndHumiditySensor createTemperatureAndHumiditySensor(int pin, int model) {
         return new TemperatureAndHumiditySensor(device, pin, model);
     }
-	
-	public UltrasonicRangerSensor createUltraSonicSensor(int pin) {
+
+    public UltrasonicRangerSensor createUltraSonicSensor(int pin) {
     	return new UltrasonicRangerSensor(device, pin);
     }
     

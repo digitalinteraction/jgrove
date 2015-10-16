@@ -15,7 +15,7 @@ import com.pi4j.io.i2c.I2CFactory;
  */
 public class GrovePiI2CDevice
 {
-	public final static String BUS = "I2C1";
+	public final static String BUS = "I2C1"; //"fake"; //"I2C1";
 	public final static int ADDRESS = 4;
     
 	private final I2CDevice device;
@@ -33,39 +33,45 @@ public class GrovePiI2CDevice
 	}
 	
 	
-	public static GrovePiI2CDevice getInstance() throws IOException {
-		return getInstance(BUS, ADDRESS);
+	public static GrovePiI2CDevice createInstance() throws IOException {
+		return createInstance(BUS, ADDRESS);
 	}
 
-	public static GrovePiI2CDevice getInstance(String bus, int address) throws IOException {
-		return new GrovePiI2CDevice(getI2CBusFromString(bus).getDevice(address));
+	public static GrovePiI2CDevice createInstance(String bus, int address) throws IOException {
+		I2CDevice device;
+		if (bus.equalsIgnoreCase("fake")) {
+			device = new FakeI2CDevice(address);
+		} else {
+			device = getI2CBusFromString(bus).getDevice(address);
+		}
+		return new GrovePiI2CDevice(device);
 	}
 
 	
-	public static GrovePiI2CDevice getInstanceRuntimeExecption() {
+	public static GrovePiI2CDevice createInstanceRuntimeExecption() {
 		try {
-			return getInstance();
+			return createInstance();
 		} catch (IOException e) {
 		   throw new RuntimeException(e);
 		}
 	}
 	
 	
-	public static GrovePiI2CDevice getInstanceTry() {
+	public static GrovePiI2CDevice createInstanceTry() {
 		try {
-			return getInstance();
+			return createInstance();
 		} catch (IOException e) {
 		   return null;
 		}
 	}
 	
 	public int read() {
-		final int maxRetries = 5;
+		final int maxRetries = 8;
 		for (int retries = 0; ; retries++) {
 			try {
 				return device.read();
 			} catch (IOException e) {
-				System.err.print("<I2C-Read-Error-" + (retries + 1) + ">");
+				//System.err.print("<I2C-Read-Error-" + (retries + 1) + ">");
 				if (retries >= maxRetries) {
 					throw new RuntimeException(e);
 				}
@@ -74,13 +80,13 @@ public class GrovePiI2CDevice
 	}
 	
 	public void read(byte[] buffer) {
-		final int maxRetries = 5;
+		final int maxRetries = 8;
 		for (int retries = 0; ; retries++) {
 			try {
 				device.read(1, buffer, 0, buffer.length);
 				return;
 			} catch (IOException e) {
-				System.err.print("<I2C-Read-Error-" + (retries + 1) + ">");
+				//System.err.print("<I2C-Read-Error-" + (retries + 1) + ">");
 				if (retries >= maxRetries) {
 					throw new RuntimeException(e);
 				}
@@ -89,13 +95,13 @@ public class GrovePiI2CDevice
 	}
 	
 	public void write(byte[] buffer) {
-		final int maxRetries = 5;
+		final int maxRetries = 8;
 		for (int retries = 0; ; retries++) {
 			try {
 				device.write(1, buffer, 0, buffer.length);
 				return;
 			} catch (IOException e) {
-				System.err.print("<I2C-Error-" + (retries + 1) + ">");
+				//System.err.print("<I2C-Error-" + (retries + 1) + ">");
 				if (retries >= maxRetries) {
 					throw new RuntimeException(e);
 				}
