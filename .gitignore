@@ -1,0 +1,6 @@
+.project
+.settings
+.classpath
+/_local
+/bin
+/dist
