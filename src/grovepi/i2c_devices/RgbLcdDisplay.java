@@ -6,6 +6,7 @@ import java.nio.charset.Charset;
 import com.pi4j.io.i2c.I2CBus;
 import com.pi4j.io.i2c.I2CDevice;
 import com.pi4j.io.i2c.I2CFactory;
+import grovepi.common.Delay;
 
 /**
  * @author Johannes Bergmann. Changes to align with C# version by Dan Jackson, Newcastle University, 2015.
@@ -43,7 +44,7 @@ public class RgbLcdDisplay {
 			lightDevice = bus.getDevice(rgbAddress);
 			textDevice = bus.getDevice(textAddress);
 		} catch (IOException e) {
-		   throw new RuntimeException(e);
+			throw new RuntimeException(e);
 		}
 	}
 
@@ -60,7 +61,7 @@ public class RgbLcdDisplay {
 			lightDevice.write(3, (byte) g);
 			lightDevice.write(2, (byte) b);
 		} catch (IOException e) {
-		   throw new RuntimeException(e);
+			throw new RuntimeException(e);
 		}
 	}
 
@@ -68,7 +69,7 @@ public class RgbLcdDisplay {
 		try {
 			textDevice.write(0x80, (byte) cmd);
 		} catch (IOException e) {
-		   throw new RuntimeException(e);
+			throw new RuntimeException(e);
 		}
 	}
 
@@ -103,7 +104,7 @@ public class RgbLcdDisplay {
 		displayCommand(BLINK_ON, blink);
 	}
 
-	public void moveLeft(){
+	public void moveLeft() {
 		command(SHIFT_TEXT_CMD | TEXT_MOVE | MOVE_LEFT);
 	}
 
@@ -116,6 +117,9 @@ public class RgbLcdDisplay {
 			clearText();
 			display(true);
 			twoLines();
+			// Added delay because occasionally first character is dropped
+			// - contribution by Kenneth Fogel based on Eduardo Moranchel's 'IoTDevice'
+			Delay.milliseconds(60);
 			int count = 0;
 			int row = 0;
 			for (byte c : text.getBytes(Charset.forName("US-ASCII"))) {
